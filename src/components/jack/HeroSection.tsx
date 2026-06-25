@@ -153,9 +153,9 @@ export function HeroSection() {
               className="
                 aspect-[4/5]
                 overflow-hidden
-                rounded-[32px]
-                sm:rounded-[42px]
-                md:rounded-[52px]
+                rounded-[72px]
+                sm:rounded-[96px]
+                md:rounded-[120px]
                 border
                 border-white/15
                 bg-white/5
@@ -171,12 +171,12 @@ export function HeroSection() {
                   h-full
                   w-full
                   select-none
-                  rounded-[50px]
+                  rounded-[64px]
                   object-cover
                   object-[center_24%]
                   pointer-events-none
-                  sm:rounded-[50px]
-                  md:rounded-[50px]
+                  sm:rounded-[88px]
+                  md:rounded-[112px]
                 "
                 draggable={false}
               />

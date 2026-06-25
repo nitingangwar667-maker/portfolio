@@ -28,7 +28,7 @@ const PROJECTS: Project[] = [
   {
     n: "01",
     category: "Web",
-    name: "Modern React Portfolio",
+    name: "Modern Portfolio",
     image: projectReact,
     link: "https://github.com/nitingangwar667-maker/portfolio",
   },
