@@ -4,11 +4,16 @@ import { FadeIn } from "./FadeIn";
 import { LiveProjectButton } from "./LiveProjectButton";
 
 import projectReact from "@/assets/cp.png";
-import projectPersonal from "@/assets/project-personal.jpg";
 import projectShowcase from "@/assets/game.png";
 import projectResponsive from "@/assets/prot.jpeg";
 import projectResponsiveOne from "@/assets/prot1.jpeg";
 import projectResponsiveThree from "@/assets/prot3.jpeg";
+import projectGreenOne from "@/assets/green1.png";
+import projectGreenTwo from "@/assets/green2.png";
+import projectGreenThree from "@/assets/green3.png";
+import reactpracone from "@/assets/react_prac1.png";
+import reactpractwo from "@/assets/react_prac2.png";
+import reactpracthree from "@/assets/react_prac3.png";
 
 interface Project {
   n: string;
@@ -31,14 +36,16 @@ const PROJECTS: Project[] = [
     n: "02",
     category: "Web",
     name: "Smart farming system",
-    image: projectPersonal,
+    image: projectGreenOne,
+    images: [projectGreenOne, projectGreenTwo, projectGreenThree],
     link: "https://github.com/nitingangwar667-maker/greenheart",
   },
   {
     n: "03",
     category: "Web",
     name: "react practice project",
-    image: projectShowcase,
+    image: reactpracone,
+    images: [reactpracone, reactpractwo, reactpracthree],
     link: "https://github.com/nitingangwar667-maker/react",
   },
   {
@@ -64,18 +71,15 @@ function ProjectCard({
 }) {
   const targetScale = 1 - (total - 1 - index) * 0.03;
 
-  const scale = useTransform(
-    progress,
-    [index / total, 1],
-    [1, targetScale]
-  );
-  const images = project.images ?? [project.image, project.image, project.image];
+  const scale = useTransform(progress, [index / total, 1], [1, targetScale]);
+  const images = project.images ?? [
+    project.image,
+    project.image,
+    project.image,
+  ];
 
   return (
-    <div
-      className="md:sticky"
-      style={{ top: `${index * 24 + 96}px` }}
-    >
+    <div className="md:sticky" style={{ top: `${index * 24 + 96}px` }}>
       <motion.div
         style={{ scale }}
         className="
@@ -191,7 +195,8 @@ export function ProjectsSection() {
   });
 
   return (
-    <section id="projects"
+    <section
+      id="projects"
       ref={containerRef}
       className="
         px-5 sm:px-8 md:px-10
@@ -199,10 +204,7 @@ export function ProjectsSection() {
         bg-[#0C0C0C]
       "
     >
-      <FadeIn
-        y={40}
-        className="text-center mb-16 sm:mb-20 md:mb-28"
-      >
+      <FadeIn y={40} className="text-center mb-16 sm:mb-20 md:mb-28">
         <h2
           className="
             hero-heading

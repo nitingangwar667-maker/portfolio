@@ -4,13 +4,7 @@ import { FadeIn } from "./FadeIn";
 import { Magnet } from "./Magnet";
 import aminePortrait from "@/assets/amine.jpeg";
 
-const NAV_LINKS = [
-  "About",
-  "Skills",
-  "Services",
-  "Projects",
-  "Contact",
-];
+const NAV_LINKS = ["About", "Skills", "Services", "Projects", "Contact"];
 
 export function HeroSection() {
   const heroRef = useRef<HTMLElement>(null);
@@ -21,7 +15,7 @@ export function HeroSection() {
   const portraitLeft = useTransform(
     scrollYProgress,
     [0, 0.85],
-    ["50%", "clamp(210px, 24vw, 420px)"]
+    ["50%", "calc(100% - clamp(210px, 24vw, 420px))"],
   );
   const portraitTop = useTransform(scrollYProgress, [0, 0.85], ["54%", "64%"]);
   const portraitScale = useTransform(scrollYProgress, [0, 0.85], [1, 0.82]);
@@ -116,8 +110,8 @@ export function HeroSection() {
               fontSize: "clamp(0.75rem, 1.4vw, 1.5rem)",
             }}
           >
-            computer science student & software developer
-            building practical, modern applications
+            computer science student & software developer building practical,
+            modern applications
           </p>
         </FadeIn>
       </div>
@@ -177,12 +171,12 @@ export function HeroSection() {
                   h-full
                   w-full
                   select-none
-                  rounded-[26px]
+                  rounded-[50px]
                   object-cover
                   object-[center_24%]
                   pointer-events-none
-                  sm:rounded-[35px]
-                  md:rounded-[44px]
+                  sm:rounded-[50px]
+                  md:rounded-[50px]
                 "
                 draggable={false}
               />
